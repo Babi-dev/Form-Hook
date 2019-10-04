@@ -1,6 +1,5 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
-// import * as Yup from "yup";
 
 export default () => {
   const [{ data, loading }, handleChange, handleSubmit] = useForm();
@@ -8,15 +7,6 @@ export default () => {
   const sendData = () => {
     console.log(data);
   };
-
-  // const schema = Yup.object().shape({
-  //   email: Yup.string()
-  //     .email("Custom invalid email message")
-  //     .required("Custom required message"),
-  //   password: Yup.string()
-  //     .min(4)
-  //     .required()
-  // });
 
   return (
     <div>
