@@ -2,10 +2,10 @@ import React from "react";
 import useForm from "../../hooks/useForm";
 
 export default () => {
-  const [{ values, loading }, handleChange, handleSubmit] = useForm();
+  const [{ data, loading }, handleChange, handleSubmit] = useForm();
 
   const sendData = () => {
-    console.log(values);
+    console.log(data);
   };
 
   return (

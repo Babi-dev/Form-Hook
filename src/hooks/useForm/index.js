@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 const useForm = () => {
-  const [values, setValues] = useState({});
+  const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
 
   const handleChange = event => {
-    const auxValues = { ...values };
-    auxValues[event.target.name] = event.target.value;
-    setValues(auxValues);
+    const aux = { ...data };
+    aux[event.target.name] = event.target.value;
+    setData(aux);
   };
 
   const handleSubmit = callback => event => {
@@ -17,7 +17,7 @@ const useForm = () => {
     setLoading(false);
   };
 
-  return [{ values, loading }, handleChange, handleSubmit];
+  return [{ data, loading }, handleChange, handleSubmit];
 };
 
 export default useForm;
