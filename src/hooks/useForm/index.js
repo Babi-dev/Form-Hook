@@ -4,9 +4,9 @@ const useForm = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const handleChange = event => {
+  const handleChange = e => {
     const aux = { ...data };
-    aux[event.target.name] = event.target.value;
+    aux[e.target.name] = e.target.value;
     setData(aux);
   };
 
