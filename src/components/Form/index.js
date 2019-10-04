@@ -1,6 +1,6 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 
 export default () => {
   const [{ data, loading }, handleChange, handleSubmit] = useForm();
@@ -20,7 +20,7 @@ export default () => {
 
   return (
     <div>
-      <form schema={schema} onSubmit={handleSubmit(sendData)}>
+      <form onSubmit={handleSubmit(sendData)}>
         <input
           onChange={handleChange}
           type="text"
