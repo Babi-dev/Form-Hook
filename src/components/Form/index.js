@@ -2,16 +2,33 @@ import React from "react";
 
 import useForm from "../../hooks/useForm";
 
+import api from "../../services/Api";
+
 import { Icon } from "@material-ui/core";
 
 import { Form, Input, Button, ContainerLogo, Span } from "../../styles";
 
-export default () => {
+export default ({ history }) => {
   const [{ data, loading }, handleChange, handleSubmit] = useForm();
 
-  const sendData = () => {
+  async function sendData(
+    name = data.name,
+    email = data.email,
+    password = data.password
+  ) {
     console.log(data);
-  };
+
+    if (!name || !email || !password) {
+      alert("Preencha todos os dados para se cadastrar");
+    } else {
+      try {
+        await api.post("/auth/register", { name, email, password });
+        history.push("/");
+      } catch (error) {
+        alert("Ocorreu um erro ao registrar sua conta. T.T");
+      }
+    }
+  }
 
   return (
     <div>
