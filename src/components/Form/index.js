@@ -16,7 +16,7 @@ export default ({ history }) => {
     email = data.email,
     password = data.password
   ) {
-    console.log(data);
+    // console.log(data);
 
     if (!name || !email || !password) {
       alert("Preencha todos os dados para se cadastrar");
